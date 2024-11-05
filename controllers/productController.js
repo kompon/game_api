@@ -13,7 +13,7 @@ exports.createProduct = async (req, res) => {
         });
 
         // เพิ่ม URL สำหรับรูปภาพที่เก็บใน public/images
-        product.image = product.image ? `https://product-books.onrender.com/public/images/${product.image}` : null;
+        product.image = product.image ? `https://game-project-z482.onrender.com/public/images/${product.image}` : null;
 
         res.status(201).json({ message: 'เพิ่มสินค้าใหม่สำเร็จ', product });
     } catch (error) {
