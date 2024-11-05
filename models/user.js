@@ -19,14 +19,6 @@ const User = sequelize.define('User', {
     image_url: {
         type: DataTypes.TEXT,
     },
-    createdat: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-    },
-    updatedat: {
-        type: DataTypes.DATE,
-        defaultValue: DataTypes.NOW,
-    },
 }, {
     tableName: 'users',
     timestamps: false,
