@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
 const Product = sequelize.define('Product', {
-    proId: {
+    proid: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
