@@ -1,31 +1,36 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const sequelize = require('../config/db');
 
 const Product = sequelize.define('Product', {
-    proid: {
-        allowNull: false,
-        autoIncrement: true,
+    proid: {  // เปลี่ยนจาก proId เป็น proid
+        type: DataTypes.INTEGER,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        autoIncrement: true,
     },
     proname: {
         type: DataTypes.STRING,
         allowNull: false,
     },
     image: {
-        type: DataTypes.STRING,
-        allowNull: true,
+        type: DataTypes.TEXT,
     },
-    authors: { // เพิ่ม authors
+    authors: {
         type: DataTypes.STRING,
-        allowNull: true,
     },
     price: {
-        type: DataTypes.FLOAT,
-        allowNull: false,
+        type: DataTypes.DECIMAL(10, 2),
+    },
+    createdat: {  // เปลี่ยนจาก createdAt เป็น createdat
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
+    },
+    updatedat: {  // เปลี่ยนจาก updatedAt เป็น updatedat
+        type: DataTypes.DATE,
+        defaultValue: DataTypes.NOW,
     },
 }, {
-    tableName: 'products', // ใช้ชื่อ Products
+    tableName: 'products',
+    timestamps: false,
 });
 
 module.exports = Product;
